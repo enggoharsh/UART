@@ -45,12 +45,13 @@ uart_tx	DBIT	Number of data bits (default: 8)
 uart_tx	SB_TICK	Oversampled stop-bit duration
 baud_gen	dvsr	Clock divisor for baud tick generation
 
-``` 📁 File Structure
+```
+📁 File Structure
 ├── uart_rx.v
 ├── uart_tx.v
 ├── baud_gen.v
 └── README.md
-
+```
 # 🚀 Usage
 
 Instantiate baud_gen with appropriate divisor for your system clock and desired baud rate.
@@ -60,4 +61,5 @@ Listen to rx_done_tick and dout to receive data.
 
 
 This modular structure makes the design portable and easy to integrate into any FPGA project.
+
 
