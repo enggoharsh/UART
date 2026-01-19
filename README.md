@@ -6,6 +6,7 @@ This project implements a complete UART communication system in Verilog, includi
 # 📌 Overview
 
 The UART system consists of three core components:
+
 uart_rx – Receives serial data and outputs an 8-bit parallel word.
 uart_tx – Converts an 8-bit parallel word into serial UART format.
 baud_gen – Generates timing ticks based on a configurable clock divisor.
@@ -15,6 +16,7 @@ The modules integrate to form a fully functional serial communication interface 
 # 📡 UART Receiver (uart_rx)
 
 The receiver detects and reconstructs incoming serial data frames using a four-state FSM:
+
 IDLE – Waits for a falling edge indicating the start bit.
 START – Samples at mid-bit to confirm start bit validity.
 DATA – Samples 8 data bits using 16× oversampling; captures LSB first.
@@ -25,6 +27,7 @@ The output byte becomes available on the dout bus and rx_done_tick is asserted o
 # 📤 UART Transmitter (uart_tx)
 
 The transmitter serializes 8-bit parallel data following standard UART framing:
+
 IDLE – Line remains high; waits for tx_start.
 START – Drives a start bit (0).
 DATA – Shifts out 8 data bits (LSB first).
@@ -39,6 +42,7 @@ It provides a single-cycle pulse (tick) at the required oversampling frequency (
 
 # 🔧 Parameters
 Module	Parameter	Description
+
 uart_rx	DBIT	Number of data bits (default: 8)
 uart_rx	SB_TICK	Oversampled stop-bit length (16 ticks)
 uart_tx	DBIT	Number of data bits (default: 8)
@@ -61,5 +65,6 @@ Listen to rx_done_tick and dout to receive data.
 
 
 This modular structure makes the design portable and easy to integrate into any FPGA project.
+
 
 
