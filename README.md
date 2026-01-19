@@ -42,15 +42,20 @@ A transmission-complete pulse is provided through tx_done_tick.
 # ⏱ Baud Rate Generator (baud_gen)
 
 The baud generator divides the system clock using the programmable divisor dvsr to create a tick used for bit timing and oversampling.
+
 It provides a single-cycle pulse (tick) at the required oversampling frequency (typically 16× baud).
 
 # 🔧 Parameters
 Module	Parameter	Description
 
 uart_rx	DBIT	Number of data bits (default: 8)
+
 uart_rx	SB_TICK	Oversampled stop-bit length (16 ticks)
+
 uart_tx	DBIT	Number of data bits (default: 8)
+
 uart_tx	SB_TICK	Oversampled stop-bit duration
+
 baud_gen	dvsr	Clock divisor for baud tick generation
 
 ```
@@ -63,12 +68,16 @@ baud_gen	dvsr	Clock divisor for baud tick generation
 # 🚀 Usage
 
 Instantiate baud_gen with appropriate divisor for your system clock and desired baud rate.
+
 Connect its tick output to both uart_rx and uart_tx as s_tick.
+
 Use tx_start and din to send data.
+
 Listen to rx_done_tick and dout to receive data.
 
 
 This modular structure makes the design portable and easy to integrate into any FPGA project.
+
 
 
 
