@@ -18,8 +18,11 @@ The modules integrate to form a fully functional serial communication interface 
 The receiver detects and reconstructs incoming serial data frames using a four-state FSM:
 
 IDLE – Waits for a falling edge indicating the start bit.
+
 START – Samples at mid-bit to confirm start bit validity.
+
 DATA – Samples 8 data bits using 16× oversampling; captures LSB first.
+
 STOP – Verifies the stop bit and signals data reception complete.
 
 The output byte becomes available on the dout bus and rx_done_tick is asserted once a full frame is received.
@@ -29,6 +32,7 @@ The output byte becomes available on the dout bus and rx_done_tick is asserted o
 The transmitter serializes 8-bit parallel data following standard UART framing:
 
 IDLE – Line remains high; waits for tx_start.
+
 START – Drives a start bit (0).
 DATA – Shifts out 8 data bits (LSB first).
 STOP – Sends one stop bit (1) before completing the transmission.
@@ -65,6 +69,7 @@ Listen to rx_done_tick and dout to receive data.
 
 
 This modular structure makes the design portable and easy to integrate into any FPGA project.
+
 
 
 
