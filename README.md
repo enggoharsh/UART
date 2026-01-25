@@ -78,6 +78,15 @@ Listen to rx_done_tick and dout to receive data.
 
 This modular structure makes the design portable and easy to integrate into any FPGA project.
 
+# RTL Schematic
+![Schematic](schematic_uart.png)
+
+# Simulation
+![SImulation](simulation_uart.png)
+
+
+
+
 
 
 
