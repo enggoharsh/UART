@@ -1,4 +1,5 @@
-﻿# UART
+# UART
+![Design](images/design_uart.png)
  
 # UART Communication Modules 
 This project implements a complete UART communication system in Verilog, including UART Receiver, UART Transmitter, and Baud Rate Generator modules. The design follows a clean FSM-based approach and supports standard UART framing with 8 data bits and 16× oversampling for reliable asynchronous communication.
@@ -83,6 +84,7 @@ This modular structure makes the design portable and easy to integrate into any 
 
 # Simulation
 ![SImulation](images/simulation_uart.png)
+
 
 
 
