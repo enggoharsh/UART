@@ -82,7 +82,8 @@ This modular structure makes the design portable and easy to integrate into any 
 ![Schematic](images/schematic_uart.png)
 
 # Simulation
-![SImulation](simulation_uart.png)
+![SImulation](images/simulation_uart.png)
+
 
 
 
